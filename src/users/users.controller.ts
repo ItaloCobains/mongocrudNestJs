@@ -1,4 +1,26 @@
-import { Controller } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpStatus, Post } from '@nestjs/common';
+import { SigninDto } from './dto/signin.dto';
+import { SignupDto } from './dto/signup.dto';
+import { User } from './models/users.model';
+import { UsersService } from './users.service';
 
 @Controller('users')
-export class UsersController {}
+export class UsersController {
+  constructor(private readonly userService: UsersService) {}
+
+  @Post('signup')
+  @HttpCode(HttpStatus.CREATED)
+  public async signup(@Body() signupDto: SignupDto): Promise<User> {
+    return this.userService.signup(signupDto);
+  }
+
+  @Post('signin')
+  @HttpCode(HttpStatus.OK)
+  public async signin(@Body() signin: SigninDto): Promise<{
+    name: string;
+    jwtToken: string;
+    email: string;
+  }> {
+    return this.userService.signin(signin);
+  }
+}

@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { JwtModule } from '@nestjs/jwt';
 import { MongooseModule } from '@nestjs/mongoose';
 import { PassportModule } from '@nestjs/passport';
-import { UsersSchema } from 'src/users/schemas/users.schema';
+import { UsersSchema } from '../users/schemas/users.schema';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './strategies/jwt.strategies';
 
@@ -22,7 +22,7 @@ import { JwtStrategy } from './strategies/jwt.strategies';
       },
     }),
   ],
-  providers: [AuthService, JwtStrategy],
+  providers: [JwtStrategy],
   exports: [AuthService],
 })
 export class AuthModule {}
