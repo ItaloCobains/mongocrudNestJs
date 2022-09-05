@@ -1,0 +1,35 @@
+### SIGNUP
+
+POST http://localhost:3000/users/signup
+Content-Type: application/json
+
+{
+  "name": "Italo",
+  "email": "italo@gmail.com",
+  "password": "1234"
+}
+
+# {
+#   "_id":"6315446ff54aed3e7a379919",
+#   "name":"italo",
+#   "email":"italobrandao.contato@gmail.com",
+#   "password":"$2b$10$mc2FkCxs7pMHOWoY5R4FguwNUsQZUuMKKVOq9Dz..znpBqVu3/Lla",
+#   "__v":0
+# }
+
+### SIGNin
+
+POST http://localhost:3000/users/signin
+Content-Type: application/json
+
+{
+  "name": "Italo",
+  "email": "italo@gmail.com",
+  "password": "1234"
+}
+
+# {
+#   "name":"italo",
+#   "jwtToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzE1NDQ2ZmY1NGFlZDNlN2EzNzk5MTkiLCJpYXQiOjE2NjIzMzgyODAsImV4cCI6MTY2MjQyNDY4MH0.R4ovmvdErC7ts3PCZ3ENlP0q7YM6HdkRs7HOUVyhufM",
+#   "email":"italobrandao.contato@gmail.com"
+# }
